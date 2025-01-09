@@ -1,8 +1,5 @@
 name: My hello world job
 on:
-  push:
-    branches: 
-      - main
   workflow_dispatch:
 jobs:
   MyFirstJob:
