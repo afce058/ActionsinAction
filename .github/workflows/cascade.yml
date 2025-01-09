@@ -5,8 +5,11 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
+    outputs:
+      jobvar: ${{ steps.first.outputs.jobvar }}
     steps:
-      - run: |
+      - id: first
+        run: |
           sleep 20
           echo "jobvar=2500" >> "$GITHUB_OUTPUT"
           echo "Job 1 created"
