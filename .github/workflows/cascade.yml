@@ -1,0 +1,18 @@
+name: cascade jobs
+on: 
+  workflow_dispatch
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          sleep 20
+          echo "jobvar=2500" >> "$GITHUB_ENV"
+          echo "Job 1 created"
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+      - run: echo "this job depends on job 1"
+      - run: echo "${{ env.jobvar }}"
