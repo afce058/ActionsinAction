@@ -1,0 +1,19 @@
+name: My second job
+on:
+  push:
+    branches: 
+    - main
+  workflow_dispatch:
+
+jobs:
+  my-second-job:
+   runs-on: ubuntu-latest
+   steps:
+     - name: greetings command
+       run: echo "hello world"
+     - name: checkout step
+       uses: actions/checkout@v4.2.2
+     - name: Print files
+       run: |
+         echo "The files in ${{ github.repository }} are:""
+         tree
