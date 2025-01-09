@@ -8,7 +8,7 @@ jobs:
     steps:
       - run: |
           sleep 20
-          echo "::set_output name=jobvar::2500" >> "$GITHUB_OUTPUT"
+          echo "jobvar=2500" >> "$GITHUB_OUTPUT"
           echo "Job 1 created"
   job2:
     runs-on: ubuntu-latest
